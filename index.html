@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Of Brexit</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
+</head>
+
+<body class="p-10 bg-gray-50">
+    <h1 class="text-6xl font-bold text-center">
+        In total since Janurary 2022 Brexit has cost us
+    </h1>
+    <div class="tick text-center text-6xl m-20" data-did-init="setupFlip">
+        <!-- Hide visual content from screenreaders with `aria-hidden` -->
+        <div data-repeat="true" aria-hidden="true">
+            <span data-view="flip"></span>
+        </div>
+    </div>
+    <div class="text-center text-6xl m-20">
+        <h1 class="text-4xl font-bold text-center">
+            this is equivalent to <span class="tick" data-did-init="setupPerPerson"><span data-view="text"></span></span> per person
+            or <span class="tick" data-did-init="setupPerBusiness"><span data-view="text"></span></span> per business
+        </h1>
+    </div>
+    </div>
+    <h1 class="text-5xl font-bold text-center m-40">
+        Instead we could have invested this on
+    </h1>
+    <div class="text-3xl grid grid-cols-2 gap-16 place-items-center">
+        <div>Fixing <span class="tick" data-did-init="setupPotholes"><span data-view="text"></span></span> potholes</div>
+        <div>Hiring <span class="tick" data-did-init="setupNurses"><span data-view="text"></span></span> nurses</div>
+        <div>Offering <span class="tick" data-did-init="setupDegrees"><span data-view="text"></span></span> free undergraduate degrees</div>
+        <div>Hosting <span class="tick" data-did-init="setupOlympicGames"><span data-view="text"></span></span> London olympic games
+        </div>
+    </div>
+    <script>
+
+        const updateInteval = 1000;
+
+        const costPerYear = 40000000000;
+        const costPerSecond = costPerYear / 31536000;
+        const exitDate = new Date('2022-01-01');
+        const population = 59597542;
+        const totalBusinesses = 5508935;
+
+        const currencyFormatter = new Intl.NumberFormat('gb-UK', { style: 'currency', currency: 'GBP', minimumFractionDigits: 0 });
+        const numberFormatter = new Intl.NumberFormat('gb-UK', { minimumFractionDigits: 0 });
+
+        function costOfBrexit() {
+            const secondsSinceBrexit = (Date.now() - exitDate.getTime()) / 1000;
+            return Math.floor(secondsSinceBrexit * costPerSecond);
+        }
+
+        function setupFlip(tick) {
+
+            Tick.helper.interval(function () {
+
+                const totalCost = costOfBrexit();
+                const formattedCost = currencyFormatter.format(totalCost)
+
+                document.title = formattedCost + " - Cost Of Brexit"
+                tick.value = formattedCost;
+
+                tick.root.setAttribute('aria-label', tick.value);
+
+            }, updateInteval);
+        }
+
+        function setupPerPerson(tick) {
+
+            Tick.helper.interval(function () {
+
+                const costPerPerson = Math.floor(costOfBrexit() / population);
+                const formattedCost = currencyFormatter.format(costPerPerson)
+
+                tick.value = formattedCost;
+
+            }, updateInteval);
+        }
+
+        function setupPerBusiness(tick) {
+
+            Tick.helper.interval(function () {
+
+                const costPerPerson = Math.floor(costOfBrexit() / totalBusinesses);
+                const formattedCost = currencyFormatter.format(costPerPerson)
+
+                tick.value = formattedCost;
+
+            }, updateInteval);
+        }
+
+        function setupNurses(tick) {
+
+            const averageNurseWage = 33384
+
+            Tick.helper.interval(function () {
+
+                const number = Math.floor(costOfBrexit() / averageNurseWage);
+                const formattedNumber = numberFormatter.format(number)
+
+                tick.value = formattedNumber;
+
+            }, updateInteval);
+        }
+
+        function setupDegrees(tick) {
+
+            const costOfADegree = 27750
+
+            Tick.helper.interval(function () {
+
+                const number = Math.floor(costOfBrexit() / costOfADegree);
+                const formattedNumber = numberFormatter.format(number)
+
+                tick.value = formattedNumber;
+
+            }, updateInteval);
+        }
+
+        function setupPotholes(tick) {
+
+            const costToFixPothole = 63
+
+            Tick.helper.interval(function () {
+
+                const number = Math.floor(costOfBrexit() / costToFixPothole);
+                const formattedNumber = numberFormatter.format(number)
+
+                tick.value = formattedNumber;
+
+            }, updateInteval);
+        }
+
+        function setupOlympicGames(tick) {
+
+            const costOfOlympicGames = 8770000000
+
+            Tick.helper.interval(function () {
+
+                const number = Math.floor(costOfBrexit() / costOfOlympicGames);
+                const formattedNumber = numberFormatter.format(number)
+
+                tick.value = formattedNumber;
+
+            }, updateInteval);
+        }
+
+    </script>
+</body>
+
+</html>
