@@ -19,3 +19,6 @@ function title() {
     const formattedCost = currencyFormatter.format(costOfBrexit())
     return formattedCost + " is the total cost of brexit since Janurary 2022";
 }
+
+//  TODO: Pull other stats into here
+// 
