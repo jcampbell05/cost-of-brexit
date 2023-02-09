@@ -91,7 +91,7 @@
                 tick.value = formattedCost;
 
                 const url = new URL(window.location);
-                url.searchParams.set('key', totalCost);
+                url.searchParams.set('c', totalCost);
                 window.history.pushState(null, '', url.toString());
 
                 tick.root.setAttribute('aria-label', tick.value);
