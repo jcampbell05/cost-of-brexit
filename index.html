@@ -90,6 +90,8 @@
                 document.title = title();
                 tick.value = formattedCost;
 
+                window.location.search = totalCost;
+
                 tick.root.setAttribute('aria-label', tick.value);
 
             }, updateInteval);
