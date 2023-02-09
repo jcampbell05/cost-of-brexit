@@ -56,10 +56,10 @@
             In an uncertain world, security is more important than ever. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Funding <span class="tick" data-did-init="setupInterrail"><span data-view="text"></span></span> three-month first class inter-railing passes</div>
-            <div>Hire <span class="tick" data-did-init="setupAuPairs"><span data-view="text"></span></span> Au Pairs</div>
-            <div>Operating <span class="tick" data-did-init="setupEmbassies"><span data-view="text"></span></span> UK overseas embassies</div>
-            <div>Running <span class="tick" data-did-init="setupAsylum"><span data-view="text"></span></span> asylum programs the same size as the one the UK currently operates</div>
+            <div>Installing <span class="tick" data-did-init="setupCCTV"><span data-view="text"></span></span> CCTV cameras</div>
+            <div>Funding <span class="tick" data-did-init="setupCourt"><span data-view="text"></span></span> days of court time</div>
+            <div>Hiring <span class="tick" data-did-init="setupPolice"><span data-view="text"></span></span> police officers</div>
+            <div>Operate <span class="tick" data-did-init="setupRehab"><span data-view="text"></span></span> rehabilitation programs</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
@@ -76,13 +76,13 @@
 
         const updateInteval = 1;
 
-        function setupAuPairs(tick) {
+        function setupPolice(tick) {
 
-            const averageAuPairWage = 4160
+            const wage = 29100
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / averageAuPairWage);
+                const number = Math.floor(costOfBrexit() / wage);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -90,13 +90,13 @@
             }, updateInteval);
         }
 
-        function setupInterrail(tick) {
+        function setupCourt(tick) {
 
-            const ticketcost = 1073.68
+            const costPerDay = 1692
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / ticketcost);
+                const number = Math.floor(costOfBrexit() / costPerDay);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -104,13 +104,13 @@
             }, updateInteval);
         }
 
-        function setupEmbassies(tick) {
+        function setupCCTV(tick) {
 
-        const maximumCostOfEmabbasy= 12222
+        const cctvCost = 584
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / maximumCostOfEmabbasy);
+            const number = Math.floor(costOfBrexit() / cctvCost);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
@@ -118,13 +118,13 @@
         }, updateInteval);
         }
 
-        function setupAsylum(tick) {
+        function setupRehab(tick) {
 
-        const systemCost = 1400000000
+        const costPerContract = 769230769
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / systemCost);
+            const number = Math.floor(costOfBrexit() / costPerContract);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
