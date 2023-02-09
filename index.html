@@ -90,8 +90,9 @@
                 document.title = title();
                 tick.value = formattedCost;
 
-                const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + totalCost;
-                window.history.pushState({path: newurl}, '', newurl);
+                const url = new URL(window.location);
+                url.searchParams.set('key', totalCost);
+                window.history.pushState(null, '', url.toString());
 
                 tick.root.setAttribute('aria-label', tick.value);
 
