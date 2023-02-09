@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Health and Pensions - Cost Of Brexit</title>
+    <title>Trade And Investment - Cost Of Brexit</title>
     <meta property="og:image" content="https://costofbrexit.com/preview.jpg">
     <meta property="og:title" content="What is the cost of brexit ?">
     <meta property="og:description" content="And what could have this money been invested towards ?">
@@ -50,24 +50,22 @@
     <div class="bunting"></div>
     <div class="xl:p-10">
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
-            Health and Pensions
+            Security
         </h1>
         <p class="text-l xl:text-3xl text-center">
-            The NHS is experenicing it's longest waiting times in a generation and UK pensions are one of europes's least generous. By reducing
-            the cost of brexit we could invest in:
+            In an uncertain world, security is more important than ever. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Providing <span class="tick" data-did-init="setupGP"><span data-view="text"></span></span> GP appointments</div>
-            <div>Hiring <span class="tick" data-did-init="setupNurses"><span data-view="text"></span></span> nurses</div>
-            <div>Building <span class="tick" data-did-init="setupHospitals"><span data-view="text"></span></span> hospitals</div>
-            <div>Funing <span class="tick" data-did-init="setupPension"><span data-view="text"></span></span> years of state pension</div>
+            <div>Installing <span class="tick" data-did-init="setupCCTV"><span data-view="text"></span></span> CCTV cameras</div>
+            <div>Funding <span class="tick" data-did-init="setupCourt"><span data-view="text"></span></span> days of court time</div>
+            <div>Hiring <span class="tick" data-did-init="setupPolice"><span data-view="text"></span></span> police officers</div>
+            <div>Operate <span class="tick" data-did-init="setupRehab"><span data-view="text"></span></span> rehabilitation programs</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
         </h1>
         <div class="text-l xl:text-3xl text-center">
-          
-           Why not write to your MP and ask them how they plan to #ReduceTheCost to your healthcare and pensions.
+           Why not write to your MP and ask them how they plan to #ReduceTheCost to our security.
         </div>
         <div class="text-center mt-20 cursor-pointer">
             <a target="_blank" href="sources.html" class="underline">What are our sources ?</a>
@@ -78,13 +76,13 @@
 
         const updateInteval = 1;
 
-        function setupNurses(tick) {
+        function setupPolice(tick) {
 
-            const averageNurseWage = 33384
+            const wage = 29100
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / averageNurseWage);
+                const number = Math.floor(costOfBrexit() / wage);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -92,14 +90,13 @@
             }, updateInteval);
         }
 
-        function setupHospitals(tick) {
+        function setupCourt(tick) {
 
-            //  https://www.bbc.co.uk/news/magazine-37383918
-            const averageHospitalCost = 178000000
+            const costPerDay = 1692
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / averageHospitalCost);
+                const number = Math.floor(costOfBrexit() / costPerDay);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -107,14 +104,13 @@
             }, updateInteval);
         }
 
-        function setupGP(tick) {
+        function setupCCTV(tick) {
 
-        // https://www.kingsfund.org.uk/audio-video/key-facts-figures-nhs
-        const averageGPCost= 39.23
+        const cctvCost = 584
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / averageGPCost);
+            const number = Math.floor(costOfBrexit() / cctvCost);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
@@ -122,16 +118,13 @@
         }, updateInteval);
         }
 
-        function setupPension(tick) {
+        function setupRehab(tick) {
 
-        const statePensionPerWeek = 185.15
-        const statePensionPerYear = statePensionPerWeek * 52
-        const retiredPopulation = 11000000
-        const pensionCostPerYear = retiredPopulation *statePensionPerYear
+        const costPerContract = 769230769
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / pensionCostPerYear);
+            const number = Math.floor(costOfBrexit() / costPerContract);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
