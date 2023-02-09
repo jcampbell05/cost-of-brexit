@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Immigration - Cost Of Brexit</title>
+    <meta property="og:image" content="https://costofbrexit.com/preview.jpg">
+    <meta property="og:title" content="What is the cost of brexit ?">
+    <meta property="og:description" content="And what could have this money been invested towards ?">
+    <meta property="og:url" content="https://costofbrexit.com">
+    <meta name="twitter:card" content="https://costofbrexit.com/preview.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
+
+    <style>
+        body {
+            font-family: "Oswald", sans-serif;
+        }
+
+        .bunting {
+            background: url('../bunting.png');
+            background-position: center;
+            background-repeat: repeat-x;
+            background-size: contain;
+            height: 100px;
+            width: 100%;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-34Y4RQC0JX"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-34Y4RQC0JX');
+    </script>
+</head>
+
+<body class="bg-gray-50">
+    <h1 class="text-2xl xl:text-4xl font-bold text-center m-5">
+        costofbrexit.com
+    </h1>
+    <div class="bunting"></div>
+    <div class="xl:p-10">
+        <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
+            Migration
+        </h1>
+        <p class="text-l xl:text-3xl text-center">
+            Britain thrives on the talents and skills immigration brings to the country, at the same time british citizens at home
+            often need the ability to gain experience abroard which they can bring back home.
+
+            By reducing the cost of brexit we could invest in:
+        </p>
+        <div class="text-1xl xl:text-3xl p-5">
+            <div>Providing <span class="tick" data-did-init="setupGP"><span data-view="text"></span></span> GP appointments</div>
+            <div>Hiring <span class="tick" data-did-init="setupNurses"><span data-view="text"></span></span> nurses</div>
+            <div>Building <span class="tick" data-did-init="setupHospitals"><span data-view="text"></span></span> hospitals</div>
+            <div>Funing <span class="tick" data-did-init="setupPension"><span data-view="text"></span></span> years of state pension</div>
+        </div>
+        <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
+            Want to do something about it ?
+        </h1>
+        <div class="text-l xl:text-3xl text-center">
+           Why not write to your MP and ask them how they plan to #ReduceTheCost to your healthcare and pensions.
+        </div>
+        <div class="text-center mt-20 cursor-pointer">
+            <a target="_blank" href="sources.html" class="underline">What are our sources ?</a>
+        </div>
+    </div>
+    <script src="../stats.js"></script>
+    <script>
+
+        const updateInteval = 1;
+
+        function setupNurses(tick) {
+
+            const averageNurseWage = 33384
+
+            Tick.helper.interval(function () {
+
+                const number = Math.floor(costOfBrexit() / averageNurseWage);
+                const formattedNumber = numberFormatter.format(number)
+
+                tick.value = formattedNumber;
+
+            }, updateInteval);
+        }
+
+        function setupHospitals(tick) {
+
+            const averageHospitalCost = 178000000
+
+            Tick.helper.interval(function () {
+
+                const number = Math.floor(costOfBrexit() / averageHospitalCost);
+                const formattedNumber = numberFormatter.format(number)
+
+                tick.value = formattedNumber;
+
+            }, updateInteval);
+        }
+
+        function setupGP(tick) {
+
+        const averageGPCost= 39.23
+
+        Tick.helper.interval(function () {
+
+            const number = Math.floor(costOfBrexit() / averageGPCost);
+            const formattedNumber = numberFormatter.format(number)
+
+            tick.value = formattedNumber;
+
+        }, updateInteval);
+        }
+
+        function setupPension(tick) {
+
+        const statePensionPerWeek = 185.15
+        const statePensionPerYear = statePensionPerWeek * 52
+        const retiredPopulation = 11000000
+        const pensionCostPerYear = retiredPopulation *statePensionPerYear
+
+        Tick.helper.interval(function () {
+
+            const number = Math.floor(costOfBrexit() / pensionCostPerYear);
+            const formattedNumber = numberFormatter.format(number)
+
+            tick.value = formattedNumber;
+
+        }, updateInteval);
+        }
+
+    </script>
+</body>
+
+</html>
