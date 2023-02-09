@@ -59,16 +59,16 @@
             By reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Providing <span class="tick" data-did-init="setupGP"><span data-view="text"></span></span> GP appointments</div>
-            <div>Hiring <span class="tick" data-did-init="setupNurses"><span data-view="text"></span></span> nurses</div>
-            <div>Building <span class="tick" data-did-init="setupHospitals"><span data-view="text"></span></span> hospitals</div>
-            <div>Funing <span class="tick" data-did-init="setupPension"><span data-view="text"></span></span> years of state pension</div>
+            <div>Fund <span class="tick" data-did-init="setupInterrail"><span data-view="text"></span></span> three-month first class inter-railing passes</div>
+            <div>Hire <span class="tick" data-did-init="setupAuPairs"><span data-view="text"></span></span> Au Pairs</div>
+            <div>Operate <span class="tick" data-did-init="setupEmbassies"><span data-view="text"></span></span> UK overseas embassies</div>
+            <div>Run <span class="tick" data-did-init="setupAsylum"><span data-view="text"></span></span> asylum programs</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
         </h1>
         <div class="text-l xl:text-3xl text-center">
-           Why not write to your MP and ask them how they plan to #ReduceTheCost to your healthcare and pensions.
+           Why not write to your MP and ask them how they plan to #ReduceTheCost of migration.
         </div>
         <div class="text-center mt-20 cursor-pointer">
             <a target="_blank" href="sources.html" class="underline">What are our sources ?</a>
@@ -79,13 +79,13 @@
 
         const updateInteval = 1;
 
-        function setupNurses(tick) {
+        function setupAuPairs(tick) {
 
-            const averageNurseWage = 33384
+            const averageAuPairWage = 4160
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / averageNurseWage);
+                const number = Math.floor(costOfBrexit() / averageAuPairWage);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -93,13 +93,13 @@
             }, updateInteval);
         }
 
-        function setupHospitals(tick) {
+        function setupInterrail(tick) {
 
-            const averageHospitalCost = 178000000
+            const ticketcost = 1073.68
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / averageHospitalCost);
+                const number = Math.floor(costOfBrexit() / ticketcost);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -107,13 +107,13 @@
             }, updateInteval);
         }
 
-        function setupGP(tick) {
+        function setupEmbassies(tick) {
 
-        const averageGPCost= 39.23
+        const maximumCostOfEmabbasy= 12222
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / averageGPCost);
+            const number = Math.floor(costOfBrexit() / maximumCostOfEmabbasy);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
@@ -121,16 +121,13 @@
         }, updateInteval);
         }
 
-        function setupPension(tick) {
+        function setupAsylum(tick) {
 
-        const statePensionPerWeek = 185.15
-        const statePensionPerYear = statePensionPerWeek * 52
-        const retiredPopulation = 11000000
-        const pensionCostPerYear = retiredPopulation *statePensionPerYear
+        const systemCost = 1400000000
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / pensionCostPerYear);
+            const number = Math.floor(costOfBrexit() / systemCost);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
