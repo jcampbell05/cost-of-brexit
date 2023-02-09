@@ -90,10 +90,6 @@
                 document.title = title();
                 tick.value = formattedCost;
 
-                const url = new URL(window.location);
-                url.searchParams.set('c', totalCost);
-                window.history.pushState(null, '', url.toString());
-
                 tick.root.setAttribute('aria-label', tick.value);
 
             }, updateInteval);
