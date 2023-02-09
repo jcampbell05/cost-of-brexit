@@ -1,8 +1,5 @@
 name: prerender
 on:
-  push:
-    branches:
-      - main
   schedule:
      - cron: "*/1 * * * *"
 jobs:
@@ -22,5 +19,5 @@ jobs:
           git config --local user.email "noreply@costofbrexit.com"
           git config --local user.name "github-actions[bot]"
           git commit -a -m "Prendered page"
-      # - name: Commit changes
-      #   run: git [ush]
+      - name: Commit changes
+        run: git push
