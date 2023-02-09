@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
     <title>Cost Of Brexit</title>
+
+    <!-- Do not change here, These are updated below -->
+    <meta property="og:image" content="./preview.jpg">
+    <meta property="og:title" content="Brexit has cost £110,870,665,071 in total since Janurary 2022">
+    <meta property="og:description" content="In total since January 2022 Brexit has cost us £110,870,665,429, see what it could have been invested on.">
+    <meta property="og:url" content="https://costofbrexit.com">
+    <meta name="twitter:card" content="./preview.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
@@ -68,23 +76,10 @@
             <a target="_blank" href="sources.html" class="underline">What are our sources ?</a>
         </div>
     </div>
+    <script src="./stats.js"></script>
     <script>
 
         const updateInteval = 1;
-
-        const costPerYear = 100000000000;
-        const costPerSecond = costPerYear / 31536000;
-        const exitDate = new Date('2022-01-01');
-        const population = 59597542;
-        const totalBusinesses = 5508935;
-
-        const currencyFormatter = new Intl.NumberFormat('gb-UK', { style: 'currency', currency: 'GBP', minimumFractionDigits: 0 });
-        const numberFormatter = new Intl.NumberFormat('gb-UK', { minimumFractionDigits: 0 });
-
-        function costOfBrexit() {
-            const secondsSinceBrexit = (Date.now() - exitDate.getTime()) / 1000;
-            return Math.floor(secondsSinceBrexit * costPerSecond);
-        }
 
         function setupFlip(tick) {
 
@@ -93,7 +88,7 @@
                 const totalCost = costOfBrexit();
                 const formattedCost = currencyFormatter.format(totalCost)
 
-                document.title = formattedCost + " - Cost Of Brexit"
+                document.title = title();
                 tick.value = formattedCost;
 
                 tick.root.setAttribute('aria-label', tick.value);

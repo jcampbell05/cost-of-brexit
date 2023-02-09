@@ -1,0 +1,21 @@
+name: prerender
+on: [push] # Schedule too
+jobs:
+  prerender:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Render Meta Stats
+        run: bash ./prerender.sh
+      - name: Screenshot Website
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: https://costofbrexit.com
+          destination: preview.jpg
+      - name: Commit files
+        run: |
+          git config --local user.email "noreply@costofbrexit.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -a -m "Prendered page"
+      - name: Commit changes
+        run: git [ush]
