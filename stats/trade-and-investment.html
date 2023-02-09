@@ -56,10 +56,10 @@
             The ability to trade and recieve investment is the backbone of any functioning modern economy. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Installing <span class="tick" data-did-init="setupCCTV"><span data-view="text"></span></span> CCTV cameras</div>
-            <div>Funding <span class="tick" data-did-init="setupCourt"><span data-view="text"></span></span> days of court time</div>
+            <div>Offering <span class="tick" data-did-init="setupStartup"><span data-view="text"></span></span> start-up loans</div>
             <div>Hiring <span class="tick" data-did-init="setupPolice"><span data-view="text"></span></span> police officers</div>
             <div>Operate <span class="tick" data-did-init="setupRehab"><span data-view="text"></span></span> rehabilitation programs</div>
+            <div>Launcing an investment fund <span class="tick" data-did-init="setupVC"><span data-view="text"></span></span> times bigger than the largest in the US</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
@@ -76,9 +76,9 @@
 
         const updateInteval = 1;
 
-        function setupPolice(tick) {
+        function setupStartup(tick) {
 
-            const wage = 29100
+            const wage = 25000
 
             Tick.helper.interval(function () {
 
@@ -90,13 +90,13 @@
             }, updateInteval);
         }
 
-        function setupCourt(tick) {
+        function setupVC(tick) {
 
-            const costPerDay = 1692
+            const size = 29393758208
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / costPerDay);
+                const number = Math.floor(costOfBrexit() / size);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
