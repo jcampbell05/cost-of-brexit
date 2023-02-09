@@ -57,9 +57,9 @@
         </p>
         <div class="text-1xl xl:text-3xl p-5">
             <div>Offering <span class="tick" data-did-init="setupStartup"><span data-view="text"></span></span> start-up loans</div>
-            <div>Hiring <span class="tick" data-did-init="setupPolice"><span data-view="text"></span></span> police officers</div>
+            <div>Hiring <span class="tick" data-did-init="setupAdvisors"><span data-view="text"></span></span> business advisors</div>
             <div>Operate <span class="tick" data-did-init="setupRehab"><span data-view="text"></span></span> rehabilitation programs</div>
-            <div>Launcing an investment fund <span class="tick" data-did-init="setupVC"><span data-view="text"></span></span> times bigger than the largest in the US</div>
+            <div>Launching an investment fund <span class="tick" data-did-init="setupVC"><span data-view="text"></span></span> times bigger than the largest in the US</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
@@ -104,13 +104,13 @@
             }, updateInteval);
         }
 
-        function setupCCTV(tick) {
+        function setupAdvisors(tick) {
 
-        const cctvCost = 584
+        const wage = 39070
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / cctvCost);
+            const number = Math.floor(costOfBrexit() / wage);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
