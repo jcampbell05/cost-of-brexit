@@ -17,15 +17,5 @@ function costOfBrexit() {
 
 function title() {
     const formattedCost = currencyFormatter.format(costOfBrexit())
-    return "Brexit has cost " + formattedCost + " in total since Janurary 2022";
-}
-
-function description() {
-    const formattedCost = currencyFormatter.format(costOfBrexit())
-    return "In total since January 2022 Brexit has cost us " + formattedCost + ", see what it could have been invested on.";
-}
-
-if (globalThis.module) {
-    module.exports.title = title
-    module.exports.description = description
+    return formattedCost + " is the total cost of brexit since Janurary 2022";
 }
