@@ -1,5 +1,8 @@
 name: prerender
-on: [push] # Schedule too
+on:
+  push:
+  schedule:
+     - cron: "*/30 * * * *"
 jobs:
   prerender:
     runs-on: ubuntu-latest
