@@ -59,10 +59,10 @@
             the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Providing <span class="tick" data-did-init="setupGP"><span data-view="text"></span></span> GP appointments</div>
-            <div>Hiring <span class="tick" data-did-init="setupNurses"><span data-view="text"></span></span> nurses</div>
-            <div>Building <span class="tick" data-did-init="setupHospitals"><span data-view="text"></span></span> hospitals</div>
-            <div>Funing <span class="tick" data-did-init="setupPension"><span data-view="text"></span></span> years of state pension</div>
+            <div>Building <span class="tick" data-did-init="setupWarehouse"><span data-view="text"></span></span> square meters of warehouse</div>
+            <div>Funding <span class="tick" data-did-init="setupCourses"><span data-view="text"></span></span> agricultural courses</div>
+            <div>Providing £<span class="tick" data-did-init="setupFarmer"><span data-view="text"></span></span> of support to each farmer</div>
+            <div>Operating <span class="tick" data-did-init="setupFleet"><span data-view="text"></span></span> fishing fleets the same size as the UK's</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
@@ -79,13 +79,13 @@
 
         const updateInteval = 1;
 
-        function setupNurses(tick) {
+        function setupFarmer(tick) {
 
-            const averageNurseWage = 33384
+            const farmers = 92100
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / averageNurseWage);
+                const number = Math.floor(costOfBrexit() / farmers);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -93,14 +93,13 @@
             }, updateInteval);
         }
 
-        function setupHospitals(tick) {
+        function setupWarehouse(tick) {
 
-            //  https://www.bbc.co.uk/news/magazine-37383918
-            const averageHospitalCost = 178000000
+            const cost = 1850
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / averageHospitalCost);
+                const number = Math.floor(costOfBrexit() / cost);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -108,14 +107,13 @@
             }, updateInteval);
         }
 
-        function setupGP(tick) {
+        function setupCourses(tick) {
 
-        // https://www.kingsfund.org.uk/audio-video/key-facts-figures-nhs
-        const averageGPCost= 39.23
+        const cost= 25000
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / averageGPCost);
+            const number = Math.floor(costOfBrexit() / cost);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
@@ -123,17 +121,13 @@
         }, updateInteval);
         }
 
-        function setupPension(tick) {
+        function setupFleet(tick) {
 
-        //  https://www.bbc.co.uk/news/magazine-37383918
-        const statePensionPerWeek = 185.15
-        const statePensionPerYear = statePensionPerWeek * 52
-        const retiredPopulation = 11000000
-        const pensionCostPerYear = retiredPopulation *statePensionPerYear
+        const cost = 626000000
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / pensionCostPerYear);
+            const number = Math.floor(costOfBrexit() / cost);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
