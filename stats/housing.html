@@ -59,7 +59,7 @@
         </p>
         <div class="text-1xl xl:text-3xl p-5">
             <div>Build <span class="tick" data-did-init="setupElizabeth"><span data-view="text"></span></span> Elizabeth Lines</div>
-            <div>Operating <span class="tick" data-did-init="setupStagecoach"><span data-view="text"></span></span> transportation companies the size of stagecoach</div>
+            <div>Offering <span class="tick" data-did-init="setupSurvey"><span data-view="text"></span></span> free level 3 house surveys</div>
             <div>Building <span class="tick" data-did-init="setupBuild"><span data-view="text"></span></span> two-bedroom homes</div>
             <div>Removing the dangerous cladding from all affected UK buildings <span class="tick" data-did-init="setupCladding"><span data-view="text"></span></span> times over</div>
         </div>
@@ -94,11 +94,11 @@
 
         function setupCladding(tick) {
 
-            const cost = 10000000000
+            const cost = 50000000000
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / 10000000000);
+                const number = Math.floor(costOfBrexit() / cost);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -106,13 +106,13 @@
             }, updateInteval);
         }
 
-        function setupSignals(tick) {
+        function setupSurvey(tick) {
 
-        const wagesPerYear = 100000000 /3000
+        const survey = 1500
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / wagesPerYear);
+            const number = Math.floor(costOfBrexit() / survey);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
