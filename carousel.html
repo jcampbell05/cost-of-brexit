@@ -14,8 +14,11 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/@glidejs/glide/dist/css/glide.core.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+
     <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
+    <script src="https://unpkg.com/@glidejs/glide"></script>
 
     <style>
         body {
@@ -50,7 +53,7 @@
     <div class="bunting"></div>
     <div class="xl:p-10">
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
-            In total since January 2022 Brexit has cost us
+            In total since January 2022 Brexit has costed us
         </h1>
         <div class="tick text-center text-l xl:text-6xl" data-did-init="setupFlip">
             <div data-repeat="true" aria-hidden="true">
@@ -68,17 +71,24 @@
         <h1 class="text-3xl xl:text-5xl font-bold text-center mb-10">
             Instead we could have invested this on
         </h1>
-        <div class="text-1xl xl:text-3xl grid grid-cols-2 gap-8 xl:gap-16 place-items-center p-5">
-            <div>Fixing <span class="tick" data-did-init="setupPotholes"><span data-view="text"></span></span> potholes
+        <div class="glide multi text-center text-1xl xl:text-3xl p-10">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide">Fixing <span class="tick" data-did-init="setupPotholes"><span data-view="text"></span></span> potholes
+                </li>
+                <li class="glide__slide">Offering <span class="tick" data-did-init="setupDegrees"><span data-view="text"></span></span> free
+                    undergraduate degrees</li>
+                <li class="glide__slide">Hiring <span class="tick" data-did-init="setupNurses"><span data-view="text"></span></span> nurses
+                </li>
+                <li class="glide__slide">Hosting <span class="tick" data-did-init="setupOlympicGames"><span data-view="text"></span></span>
+                    London
+                    Olympic games
+                </li>
+              </ul>
             </div>
-            <div>Offering <span class="tick" data-did-init="setupDegrees"><span data-view="text"></span></span> free
-                undergraduate degrees</div>
-            <div>Hiring <span class="tick" data-did-init="setupNurses"><span data-view="text"></span></span> nurses
-            </div>
-            <div>Hosting <span class="tick" data-did-init="setupOlympicGames"><span data-view="text"></span></span>
-                London
-                Olympic games
-            </div>
+        </div>
+        <div class="text-center mt-20 cursor-pointer">
+            <a href="stats.html" class="rounded text-white font-bold  bg-red-500 hover:bg-red-700 rounded px-10 py-5">See More Stats</a>
         </div>
         <div class="text-center mt-20 cursor-pointer">
             <a target="_blank" href="sources.html" class="underline">What are our sources ?</a>
@@ -88,6 +98,13 @@
     <script>
 
         const updateInteval = 1;
+
+        new Glide('.glide', {
+            type: 'carousel',
+            draggable: false,
+            autoplay: 3000,
+            perView: 3,
+        }).mount()
 
         function setupFlip(tick) {
 
