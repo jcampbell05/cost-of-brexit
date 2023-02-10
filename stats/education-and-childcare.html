@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Trade And Investment - Cost Of Brexit</title>
+    <title>Education And Childcare - Cost Of Brexit</title>
 
     <link rel="shortcut icon apple-touch-icon" type="image/png" href="https://costofbrexit.com/favicon.png">
     <meta property="og:image" content="https://costofbrexit.com/preview.jpg">
@@ -52,22 +52,22 @@
     <div class="bunting"></div>
     <div class="xl:p-10">
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
-            Trade And Investment
+            Education And Childcare
         </h1>
         <p class="text-l xl:text-3xl text-center">
-            The ability to trade and recieve investment is the backbone of any functioning modern economy. That's why by reducing the cost of brexit we could invest in:
+            There's no place like home. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Sponsoring <span class="tick" data-did-init="setupCoworking"><span data-view="text"></span></span> co-working desk spaces</div>
-            <div>Offering <span class="tick" data-did-init="setupStartup"><span data-view="text"></span></span> start-up loans</div>
-            <div>Hiring <span class="tick" data-did-init="setupAdvisors"><span data-view="text"></span></span> business advisors</div>
-            <div>Launching a VC fund <span class="tick" data-did-init="setupVC"><span data-view="text"></span></span> times bigger than the largest in the US</div>
+            <div>Offering <span class="tick" data-did-init="setupSurvey"><span data-view="text"></span></span> free house surveys</div>
+            <div>Hire <span class="tick" data-did-init="setupConsultant"><span data-view="text"></span></span> development planning consultants</div>
+            <div>Building <span class="tick" data-did-init="setupBuild"><span data-view="text"></span></span> two-bedroom homes</div>
+            <div>Removing the dangerous cladding from all affected UK buildings <span class="tick" data-did-init="setupCladding"><span data-view="text"></span></span> times over</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
         </h1>
         <div class="text-l xl:text-3xl text-center">
-           Why not write to your MP and ask them how they plan to #ReduceTheCost to our trade.
+           Why not write to your MP and ask them how they plan to #ReduceTheCost to our education and childcare facilities.
         </div>
         <div class="text-center mt-20 cursor-pointer">
             <a target="_blank" href="sources.html" class="underline">What are our sources ?</a>
@@ -78,13 +78,13 @@
 
         const updateInteval = 1;
 
-        function setupStartup(tick) {
+        function setupBuild(tick) {
 
-            const wage = 25000
+            const cost = 281437
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / wage);
+                const number = Math.floor(costOfBrexit() / cost);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -92,13 +92,13 @@
             }, updateInteval);
         }
 
-        function setupVC(tick) {
+        function setupCladding(tick) {
 
-            const size = 29393758208
+            const cost = 50000000000
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / size);
+                const number = Math.floor(costOfBrexit() / cost);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -106,13 +106,13 @@
             }, updateInteval);
         }
 
-        function setupAdvisors(tick) {
+        function setupSurvey(tick) {
 
-        const wage = 39070
+        const survey = 1500
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / wage);
+            const number = Math.floor(costOfBrexit() / survey);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
@@ -120,14 +120,13 @@
         }, updateInteval);
         }
 
-        function setupCoworking(tick) {
+        function setupConsultant(tick) {
 
-        const costPerMonth = 250
-        const costPerYear = costPerMonth * 12
+        const funding = 56000
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / costPerYear);
+            const number = Math.floor(costOfBrexit() / funding);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
