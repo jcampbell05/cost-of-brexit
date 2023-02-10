@@ -52,15 +52,15 @@
     <div class="bunting"></div>
     <div class="xl:p-10">
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
-            Trade And Investment
+            Environment
         </h1>
         <p class="text-l xl:text-3xl text-center">
             With the climate crisis the environment has been more important than ever. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
             <div>Planting <span class="tick" data-did-init="setupTrees"><span data-view="text"></span></span> trees</div>
+            <div>Covering the costs of <span class="tick" data-did-init="setupDogs"><span data-view="text"></span></span> dogs</div>
             <div>Building <span class="tick" data-did-init="setupPlant"><span data-view="text"></span></span> desalination plants</div>
-            <div>Hiring <span class="tick" data-did-init="setupAdvisors"><span data-view="text"></span></span> business advisors</div>
             <div>Launching a VC fund <span class="tick" data-did-init="setupVC"><span data-view="text"></span></span> times bigger than the largest in the US</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
@@ -106,13 +106,13 @@
             }, updateInteval);
         }
 
-        function setupAdvisors(tick) {
+        function setupDogs(tick) {
 
-        const wage = 39070
+        const cost = 12200
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / wage);
+            const number = Math.floor(costOfBrexit() / cost);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
