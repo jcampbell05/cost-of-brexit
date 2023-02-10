@@ -55,12 +55,12 @@
             Education And Childcare
         </h1>
         <p class="text-l xl:text-3xl text-center">
-            There's no place like home. That's why by reducing the cost of brexit we could invest in:
+            Every country needs to support it's future generations. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Offering <span class="tick" data-did-init="setupSurvey"><span data-view="text"></span></span> free house surveys</div>
-            <div>Hire <span class="tick" data-did-init="setupConsultant"><span data-view="text"></span></span> development planning consultants</div>
-            <div>Building <span class="tick" data-did-init="setupBuild"><span data-view="text"></span></span> two-bedroom homes</div>
+            <div>Providing <span class="tick" data-did-init="setupDictionary"><span data-view="text"></span></span> free english dictionaries</div>
+            <div>Hiring <span class="tick" data-did-init="setupTeachers"><span data-view="text"></span></span> teachers</div>
+            <div>Providing <span class="tick" data-did-init="setupChildcare"><span data-view="text"></span></span> children under the age of two with a year's worth of part-time childcare</div>
             <div>Removing the dangerous cladding from all affected UK buildings <span class="tick" data-did-init="setupCladding"><span data-view="text"></span></span> times over</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
@@ -78,23 +78,9 @@
 
         const updateInteval = 1;
 
-        function setupBuild(tick) {
+        function setupTeachers(tick) {
 
-            const cost = 281437
-
-            Tick.helper.interval(function () {
-
-                const number = Math.floor(costOfBrexit() / cost);
-                const formattedNumber = numberFormatter.format(number)
-
-                tick.value = formattedNumber;
-
-            }, updateInteval);
-        }
-
-        function setupCladding(tick) {
-
-            const cost = 50000000000
+            const cost = 28000
 
             Tick.helper.interval(function () {
 
@@ -106,13 +92,28 @@
             }, updateInteval);
         }
 
-        function setupSurvey(tick) {
+        function setupChildcare(tick) {
 
-        const survey = 1500
+            const costPerWeek = 7212
+            const costPerYear = costPerWeek * 52
+
+            Tick.helper.interval(function () {
+
+                const number = Math.floor(costOfBrexit() / costPerYear);
+                const formattedNumber = numberFormatter.format(number)
+
+                tick.value = formattedNumber;
+
+            }, updateInteval);
+        }
+
+        function setupDictionary(tick) {
+
+        const cost = 3.50
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / survey);
+            const number = Math.floor(costOfBrexit() / cost);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
