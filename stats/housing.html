@@ -58,17 +58,16 @@
             There's no place like home. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            
-            <div>Paying <span class="tick" data-did-init="setupSignals"><span data-view="text"></span></span> signallers to maintain our railway signals</div>
-            <div>Purchasing <span class="tick" data-did-init="setupBuses"><span data-view="text"></span></span> hybrid diesel-electric double-deck buses</div>
             <div>Build <span class="tick" data-did-init="setupElizabeth"><span data-view="text"></span></span> Elizabeth Lines</div>
             <div>Operating <span class="tick" data-did-init="setupStagecoach"><span data-view="text"></span></span> transportation companies the size of stagecoach</div>
+            <div>Building <span class="tick" data-did-init="setupBuild"><span data-view="text"></span></span> two-bedroom homes</div>
+            <div>Removing the dangerous cladding from all UK buildings <span class="tick" data-did-init="setupCladding"><span data-view="text"></span></span> times over</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
         </h1>
         <div class="text-l xl:text-3xl text-center">
-           Why not write to your MP and ask them how they plan to #ReduceTheCost to our transport system.
+           Why not write to your MP and ask them how they plan to #ReduceTheCost to our housing
         </div>
         <div class="text-center mt-20 cursor-pointer">
             <a target="_blank" href="sources.html" class="underline">What are our sources ?</a>
@@ -79,9 +78,9 @@
 
         const updateInteval = 1;
 
-        function setupElizabeth(tick) {
+        function setupBuild(tick) {
 
-            const cost = 25000000000
+            const cost = 281437
 
             Tick.helper.interval(function () {
 
@@ -93,13 +92,13 @@
             }, updateInteval);
         }
 
-        function setupBuses(tick) {
+        function setupCladding(tick) {
 
-            const cost = 300000
+            const cost = 10000000000
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / cost);
+                const number = Math.floor(costOfBrexit() / 10000000000);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
