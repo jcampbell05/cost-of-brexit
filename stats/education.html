@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Trade And Investment - Cost Of Brexit</title>
+
+    <link rel="shortcut icon apple-touch-icon" type="image/png" href="https://costofbrexit.com/favicon.png">
+    <meta property="og:image" content="https://costofbrexit.com/preview.jpg">
+    <meta property="og:title" content="What is the cost of brexit ?">
+    <meta property="og:description" content="And what could have this money been invested towards ?">
+    <meta property="og:url" content="https://costofbrexit.com">
+    <meta name="twitter:card" content="https://costofbrexit.com/preview.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
+
+    <style>
+        body {
+            font-family: "Oswald", sans-serif;
+        }
+
+        .bunting {
+            background: url('../bunting.png');
+            background-position: center;
+            background-repeat: repeat-x;
+            background-size: contain;
+            height: 100px;
+            width: 100%;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-34Y4RQC0JX"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-34Y4RQC0JX');
+    </script>
+</head>
+
+<body class="bg-gray-50">
+    <h1 class="text-2xl xl:text-4xl font-bold text-center m-5">
+        costofbrexit.com
+    </h1>
+    <div class="bunting"></div>
+    <div class="xl:p-10">
+        <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
+            Trade And Investment
+        </h1>
+        <p class="text-l xl:text-3xl text-center">
+            The ability to trade and recieve investment is the backbone of any functioning modern economy. That's why by reducing the cost of brexit we could invest in:
+        </p>
+        <div class="text-1xl xl:text-3xl p-5">
+            <div>Sponsoring <span class="tick" data-did-init="setupCoworking"><span data-view="text"></span></span> co-working desk spaces</div>
+            <div>Offering <span class="tick" data-did-init="setupStartup"><span data-view="text"></span></span> start-up loans</div>
+            <div>Hiring <span class="tick" data-did-init="setupAdvisors"><span data-view="text"></span></span> business advisors</div>
+            <div>Launching a VC fund <span class="tick" data-did-init="setupVC"><span data-view="text"></span></span> times bigger than the largest in the US</div>
+        </div>
+        <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
+            Want to do something about it ?
+        </h1>
+        <div class="text-l xl:text-3xl text-center">
+           Why not write to your MP and ask them how they plan to #ReduceTheCost to our trade.
+        </div>
+        <div class="text-center mt-20 cursor-pointer">
+            <a target="_blank" href="sources.html" class="underline">What are our sources ?</a>
+        </div>
+    </div>
+    <script src="../stats.js"></script>
+    <script>
+
+        const updateInteval = 1;
+
+        function setupStartup(tick) {
+
+            const wage = 25000
+
+            Tick.helper.interval(function () {
+
+                const number = Math.floor(costOfBrexit() / wage);
+                const formattedNumber = numberFormatter.format(number)
+
+                tick.value = formattedNumber;
+
+            }, updateInteval);
+        }
+
+        function setupVC(tick) {
+
+            const size = 29393758208
+
+            Tick.helper.interval(function () {
+
+                const number = Math.floor(costOfBrexit() / size);
+                const formattedNumber = numberFormatter.format(number)
+
+                tick.value = formattedNumber;
+
+            }, updateInteval);
+        }
+
+        function setupAdvisors(tick) {
+
+        const wage = 39070
+
+        Tick.helper.interval(function () {
+
+            const number = Math.floor(costOfBrexit() / wage);
+            const formattedNumber = numberFormatter.format(number)
+
+            tick.value = formattedNumber;
+
+        }, updateInteval);
+        }
+
+        function setupCoworking(tick) {
+
+        const costPerMonth = 250
+        const costPerYear = costPerMonth * 12
+
+        Tick.helper.interval(function () {
+
+            const number = Math.floor(costOfBrexit() / costPerYear);
+            const formattedNumber = numberFormatter.format(number)
+
+            tick.value = formattedNumber;
+
+        }, updateInteval);
+        }
+
+    </script>
+</body>
+
+</html>
