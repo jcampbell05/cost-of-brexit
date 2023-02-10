@@ -59,9 +59,9 @@
         </p>
         <div class="text-1xl xl:text-3xl p-5">
             <div>Planting <span class="tick" data-did-init="setupTrees"><span data-view="text"></span></span> trees</div>
+            <div>Funding <span class="tick" data-did-init="setupTechnician"><span data-view="text"></span></span> hours of time for a technician from the  environmental agnecy</div>
             <div>Covering the costs of <span class="tick" data-did-init="setupDogs"><span data-view="text"></span></span> dogs</div>
             <div>Building <span class="tick" data-did-init="setupPlant"><span data-view="text"></span></span> desalination plants</div>
-            <div>Launching a VC fund <span class="tick" data-did-init="setupVC"><span data-view="text"></span></span> times bigger than the largest in the US</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
@@ -120,14 +120,13 @@
         }, updateInteval);
         }
 
-        function setupCoworking(tick) {
+        function setupTechnician(tick) {
 
-        const costPerMonth = 250
-        const costPerYear = costPerMonth * 12
+        const funding = 125
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / costPerYear);
+            const number = Math.floor(costOfBrexit() / funding);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
