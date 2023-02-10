@@ -58,8 +58,8 @@
             With the climate crisis the environment has been more important than ever. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Sponsoring <span class="tick" data-did-init="setupCoworking"><span data-view="text"></span></span> co-working desk spaces</div>
-            <div>Offering <span class="tick" data-did-init="setupStartup"><span data-view="text"></span></span> start-up loans</div>
+            <div>Planting <span class="tick" data-did-init="setupTrees"><span data-view="text"></span></span> trees</div>
+            <div>Building <span class="tick" data-did-init="setupPlant"><span data-view="text"></span></span> desalination plants</div>
             <div>Hiring <span class="tick" data-did-init="setupAdvisors"><span data-view="text"></span></span> business advisors</div>
             <div>Launching a VC fund <span class="tick" data-did-init="setupVC"><span data-view="text"></span></span> times bigger than the largest in the US</div>
         </div>
@@ -78,13 +78,13 @@
 
         const updateInteval = 1;
 
-        function setupStartup(tick) {
+        function setupTrees(tick) {
 
-            const wage = 25000
+            const cost = 55
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / wage);
+                const number = Math.floor(costOfBrexit() / cost);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -92,13 +92,13 @@
             }, updateInteval);
         }
 
-        function setupVC(tick) {
+        function setupPlant(tick) {
 
-            const size = 29393758208
+            const cost = 250000000
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / size);
+                const number = Math.floor(costOfBrexit() / cost);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
