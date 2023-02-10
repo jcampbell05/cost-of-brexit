@@ -58,10 +58,10 @@
             With science & technology innovating at breakneck speeds we cannot be left behind. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Installing <span class="tick" data-did-init="setupCCTV"><span data-view="text"></span></span> CCTV cameras</div>
-            <div>Funding <span class="tick" data-did-init="setupCourt"><span data-view="text"></span></span> days of court time</div>
-            <div>Hiring <span class="tick" data-did-init="setupPolice"><span data-view="text"></span></span> police officers</div>
-            <div>Operate <span class="tick" data-did-init="setupRehab"><span data-view="text"></span></span> rehabilitation programs</div>
+            <div>Funding <span class="tick" data-did-init="setupPHD"><span data-view="text"></span></span> free years of a PHD course</div>
+            <div>Running <span class="tick" data-did-init="setupTrials"><span data-view="text"></span></span> clinical trials</div>
+            <div>Developing <span class="tick" data-did-init="setupVaccine"><span data-view="text"></span></span> new vaccines</div>
+            <div>Openening a space agency with <span class="tick" data-did-init="setupNASA"><span data-view="text"></span></span> times the budget of NASA's</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
@@ -78,13 +78,13 @@
 
         const updateInteval = 1;
 
-        function setupPolice(tick) {
+        function setupVaccine(tick) {
 
-            const wage = 29100
+            const cost = 88000000
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / wage);
+                const number = Math.floor(costOfBrexit() / cost);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -92,13 +92,13 @@
             }, updateInteval);
         }
 
-        function setupCourt(tick) {
+        function setupNASA(tick) {
 
-            const costPerDay = 1692
+            const budget = 25400000000
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / costPerDay);
+                const number = Math.floor(costOfBrexit() / budget);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -106,13 +106,13 @@
             }, updateInteval);
         }
 
-        function setupCCTV(tick) {
+        function setupPHD(tick) {
 
-        const cctvCost = 584
+        const cost = 4500
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / cctvCost);
+            const number = Math.floor(costOfBrexit() / cost);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
@@ -120,13 +120,13 @@
         }, updateInteval);
         }
 
-        function setupRehab(tick) {
+        function setupTrials(tick) {
 
-        const costPerContract = 769230769
+        const cost = 769637
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / costPerContract);
+            const number = Math.floor(costOfBrexit() / cost);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
