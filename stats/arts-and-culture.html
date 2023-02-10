@@ -58,10 +58,10 @@
             These are the lifeblood of a nation's idendity. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Sponsoring <span class="tick" data-did-init="setupCoworking"><span data-view="text"></span></span> co-working desk spaces</div>
-            <div>Offering <span class="tick" data-did-init="setupStartup"><span data-view="text"></span></span> start-up loans</div>
-            <div>Hiring <span class="tick" data-did-init="setupAdvisors"><span data-view="text"></span></span> business advisors</div>
-            <div>Launching a VC fund <span class="tick" data-did-init="setupVC"><span data-view="text"></span></span> times bigger than the largest in the US</div>
+            <div>Support <span class="tick" data-did-init="setupArtists"><span data-view="text"></span></span> artists</div>
+            <div>Making <span class="tick" data-did-init="setupFilms"><span data-view="text"></span></span> feature films</div>
+            <div>Provide <span class="tick" data-did-init="setupMusic"><span data-view="text"></span></span> hours of music lessons</div>
+            <div>Covering the cost of <span class="tick" data-did-init="setupMuseum"><span data-view="text"></span></span> museums the same size as the British Musium</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
@@ -78,13 +78,13 @@
 
         const updateInteval = 1;
 
-        function setupStartup(tick) {
+        function setupFilms(tick) {
 
-            const wage = 25000
+            const budget = 6200000
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / wage);
+                const number = Math.floor(costOfBrexit() / budget);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
@@ -92,9 +92,9 @@
             }, updateInteval);
         }
 
-        function setupVC(tick) {
+        function setupArtists(tick) {
 
-            const size = 29393758208
+            const size = 37500
 
             Tick.helper.interval(function () {
 
@@ -106,13 +106,13 @@
             }, updateInteval);
         }
 
-        function setupAdvisors(tick) {
+        function setupMusic(tick) {
 
-        const wage = 39070
+        const cost = 36
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / wage);
+            const number = Math.floor(cost / costOfBrexit());
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
@@ -120,14 +120,13 @@
         }, updateInteval);
         }
 
-        function setupCoworking(tick) {
+        function setupMuseum(tick) {
 
-        const costPerMonth = 250
-        const costPerYear = costPerMonth * 12
+        const expenses = 79663000
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / costPerYear);
+            const number = Math.floor(costOfBrexit() / expenses);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
