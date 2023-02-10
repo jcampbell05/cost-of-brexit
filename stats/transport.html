@@ -58,10 +58,11 @@
             As more of us are giving up on our cars it's important that we are still able to get around. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Planting <span class="tick" data-did-init="setupTrees"><span data-view="text"></span></span> trees</div>
             <div>Funding <span class="tick" data-did-init="setupTechnician"><span data-view="text"></span></span> hours of time for a technician from the  environmental agnecy</div>
             <div>Covering the costs of <span class="tick" data-did-init="setupDogs"><span data-view="text"></span></span> dogs</div>
-            <div>Building <span class="tick" data-did-init="setupPlant"><span data-view="text"></span></span> desalination plants</div>
+            <div>Purchasing <span class="tick" data-did-init="setupBuses"><span data-view="text"></span></span> hybrid diesel-electric double-deck buses</div>
+
+            <div>Build <span class="tick" data-did-init="setupElizabeth"><span data-view="text"></span></span> Elizabeth Lines</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
@@ -78,9 +79,9 @@
 
         const updateInteval = 1;
 
-        function setupTrees(tick) {
+        function setupElizabeth(tick) {
 
-            const cost = 55
+            const cost = 25000000000
 
             Tick.helper.interval(function () {
 
@@ -92,9 +93,9 @@
             }, updateInteval);
         }
 
-        function setupPlant(tick) {
+        function setupBuses(tick) {
 
-            const cost = 250000000
+            const cost = 300000
 
             Tick.helper.interval(function () {
 
