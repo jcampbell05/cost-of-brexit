@@ -58,11 +58,11 @@
             As more of us are giving up on our cars it's important that we are still able to get around. That's why by reducing the cost of brexit we could invest in:
         </p>
         <div class="text-1xl xl:text-3xl p-5">
-            <div>Funding <span class="tick" data-did-init="setupTechnician"><span data-view="text"></span></span> hours of time for a technician from the  environmental agnecy</div>
-            <div>Covering the costs of <span class="tick" data-did-init="setupDogs"><span data-view="text"></span></span> dogs</div>
+            
+            <div>Paying <span class="tick" data-did-init="setupSignals"><span data-view="text"></span></span> signallers to maintain our railway signals</div>
             <div>Purchasing <span class="tick" data-did-init="setupBuses"><span data-view="text"></span></span> hybrid diesel-electric double-deck buses</div>
-
             <div>Build <span class="tick" data-did-init="setupElizabeth"><span data-view="text"></span></span> Elizabeth Lines</div>
+            <div>Operating <span class="tick" data-did-init="setupStagecoach"><span data-view="text"></span></span> transportation companies the size of stagecoach</div>
         </div>
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
             Want to do something about it ?
@@ -107,13 +107,13 @@
             }, updateInteval);
         }
 
-        function setupDogs(tick) {
+        function setupSignals(tick) {
 
-        const cost = 12200
+        const wagesPerYear = 100000000 /3000
 
         Tick.helper.interval(function () {
 
-            const number = Math.floor(costOfBrexit() / cost);
+            const number = Math.floor(costOfBrexit() / wagesPerYear);
             const formattedNumber = numberFormatter.format(number)
 
             tick.value = formattedNumber;
@@ -121,9 +121,9 @@
         }, updateInteval);
         }
 
-        function setupTechnician(tick) {
+        function setupStagecoach(tick) {
 
-        const funding = 125
+        const funding = 1766000000
 
         Tick.helper.interval(function () {
 
