@@ -58,7 +58,7 @@
     <div class="bunting"></div>
     <div class="xl:p-10">
         <h1 class="text-3xl xl:text-6xl font-bold text-center mt-10 mb-10">
-            In total, Since January 2022 Brexit has costed us
+            In total, Since January 2022 Brexit has cost us
         </h1>
         <div class="tick text-center text-lg bold xl:text-6xl" data-did-init="setupFlip">
             <div data-repeat="true" aria-hidden="true">
@@ -79,14 +79,15 @@
         <div class="text-1xl xl:text-3xl grid grid-cols-2 gap-8 xl:gap-16 place-items-center p-5">
             <div>Fixing <span class="tick" data-did-init="setupPotholes"><span data-view="text"></span></span> potholes
             </div>
-            <div>Serving <span class="tick" data-did-init="setupMeals"><span data-view="text"></span></span> children
-                with one year of free school meals</div>
-            <div>Hiring <span class="tick" data-did-init="setupNurses"><span data-view="text"></span></span> nurses
-            </div>
+            <!-- Replace -->
             <div>Hosting <span class="tick" data-did-init="setupOlympicGames"><span data-view="text"></span></span>
                 London
                 Olympic Games
             </div>
+            <div>Hiring <span class="tick" data-did-init="setupNurses"><span data-view="text"></span></span> nurses
+            </div>
+            <div>Serving free meals for every school kid for <span class="tick" data-did-init="setupMeals"><span data-view="text"></span></span>
+                years</div>
         </div>
         <div class="text-center mt-20 cursor-pointer">
             <a href="stats.html"
@@ -315,11 +316,13 @@
 
         function setupMeals(tick) {
 
-            const funding = 457.90
+            const schoolkidsEachYear = 10000000
+            const costPerSchoolKid = 457.90
+            const costForAllKids = schoolkidsEachYear * costPerSchoolKid
 
             Tick.helper.interval(function () {
 
-                const number = Math.floor(costOfBrexit() / funding);
+                const number = Math.floor(costOfBrexit() / costForAllKids);
                 const formattedNumber = numberFormatter.format(number)
 
                 tick.value = formattedNumber;
