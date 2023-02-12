@@ -236,3 +236,16 @@ body {
 .tick-flip {
   padding-bottom: 10px;
 }
+
+.light .tick-flip {
+  letter-spacing: 0;
+  min-width: 0.8em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 0px;
+}
+
+.light .tick-flip-panel {
+  color: #555;
+  background-color: #fafafa;
+}
