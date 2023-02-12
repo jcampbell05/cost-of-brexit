@@ -88,7 +88,126 @@ var stats = [
         }
     }
 ]
+const updateInteval = 25;
+const statShuffleInterval = 5000;
+
+function setupFlip(tick) {
+
+    Tick.helper.interval(function () {
+
+        const totalCost = costOfBrexit();
+        const formattedCost = currencyFormatter.format(totalCost)
+
+        document.title = title();
+        tick.value = formattedCost;
+
+        tick.root.setAttribute('aria-label', tick.value);
+
+    }, updateInteval);
+}
+
+function setupPerPerson(tick) {
+
+    Tick.helper.interval(function () {
+
+        const costPerPerson = Math.floor(costOfBrexit() / population);
+        const formattedCost = currencyFormatter.format(costPerPerson)
+
+        tick.value = formattedCost;
+
+    }, updateInteval);
+}
+
+function setupPerBusiness(tick) {
+
+    Tick.helper.interval(function () {
+
+        const costPerPerson = Math.floor(costOfBrexit() / totalBusinesses);
+        const formattedCost = currencyFormatter.format(costPerPerson)
+
+        tick.value = formattedCost;
+
+    }, updateInteval);
+}
+
+function createStatSlot(element) {
+
+    var stat = stats.shift();
+
+    function valueFromStat(stat) {
+        return {
+            'caption': stat.caption,
+            'value': stat.value()
+        }
+    }
+
+    function styleComma(root) {
+        const flippers = root.querySelectorAll(".tick-flip");
+
+        for (var flipper of flippers) {
+            const text = flipper.querySelector(".tick-flip-panel-text-wrapper");
+
+            if (text.textContent === ',') {
+                flipper.style.minWidth = '0.4em';
+            }
+        }
+    }
+
+    const tick = Tick.DOM.create(element, {
+        value: valueFromStat(stat),
+        didInit: () => {
+            styleComma(element);
+        },
+        view: {
+            children: [
+                {
+                    root: 'div',
+                    layout: 'vertical',
+                    children: [
+                        {
+                            layout: 'horizontal',
+                            repeat: true,
+                            key: 'value',
+                            children: [
+                                {
+                                    view: 'flip'
+                                },
+                            ]
+                        },
+                        {
+                            view: 'flip',
+                            key: 'caption'
+                        }
+                    ]
+                }
+            ]
+        }
+    });
+
+    Tick.helper.interval(function () {
+        tick.value = valueFromStat(stat);
+        styleComma(element);
+    }, updateInteval);
+
+    return () => {
+        stats.push(stat);
+        stat = stats.shift();
+        tick.value = valueFromStat(stat);
+        styleComma(element);
+    }
+}
 
 // Shuffle Stats
 //
 stats = stats.sort((a, b) => 0.5 - Math.random());
+
+var statSlots = Array.from(document.querySelectorAll('.stat-slot'));
+statSlots = statSlots.map(element => createStatSlot(element));
+
+setInterval(() => {
+
+    const selectedSlotID = Math.floor(Math.random() * statSlots.length);
+    var selectedSlot = statSlots[selectedSlotID];
+    selectedSlot();
+
+}, statShuffleInterval);
