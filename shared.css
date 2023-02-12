@@ -236,13 +236,3 @@ body {
 .tick-flip {
   padding-bottom: 10px;
 }
-
-.light .tick-flip-panel {
-    color: #555;
-    background-color: transparent;
-}
-
-.light .tick-flip-shadow {
-  background: transparent;
-  box-shadow: none;
-}
