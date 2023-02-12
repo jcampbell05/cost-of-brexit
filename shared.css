@@ -245,7 +245,16 @@ body {
   padding-bottom: 0px;
 }
 
+
+.light .tick-flip-shadow {
+  box-shadow: none;
+}
+
 .light .tick-flip-panel {
   color: #555;
   background-color: #fafafa;
+}
+
+.light .tick-flip-panel-back::after {
+  background-image: none;
 }
