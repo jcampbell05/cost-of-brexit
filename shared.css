@@ -239,5 +239,10 @@ body {
 
 .light .tick-flip-panel {
     color: #555;
-    background-color: #fafafa;
+    background-color: transparent;
+}
+
+.light .tick-flip-shadow {
+  background: transparent;
+  box-shadow: none;
 }
