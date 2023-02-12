@@ -17,7 +17,6 @@
     <meta name="twitter:card" content="https://costofbrexit.com/preview.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
@@ -263,9 +262,25 @@
                 }
             }
 
+            function styleComma(root) {
+                const flippers = root.querySelectorAll(".tick-flip");
+
+                for (var flipper of flippers) {
+
+                    const text = flipper.querySelector(".tick-flip-panel-text-wrapper");
+
+                    console.log(text.textContent);
+
+                    flipper.style.minWidth = '0.4em';
+                }
+            }
+
             const tick = Tick.DOM.create(element, {
                 value: valueFromStat(stat),
-                view: {
+                didInit: () => {
+                    styleComma(element);
+                },
+                 view: {
                     children:[
                         {
                             root: 'div',
@@ -293,12 +308,14 @@
 
             Tick.helper.interval(function () {
                 tick.value = valueFromStat(stat);
+                styleComma(element);
             }, updateInteval);
 
             return () => {
                 stats.push(stat);
                 stat = stats.shift();
                 tick.value = valueFromStat(stat);
+                styleComma(element);
             }
         }
 

@@ -17,7 +17,8 @@
     <meta name="twitter:card" content="https://costofbrexit.com/preview.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+        integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
@@ -49,8 +50,10 @@
         </div>
         <div class="text-center text-m xl:text-4xl m-5 mt-10 mb-20">
             <h1 class="font-bold text-center">
-                This is equivalent to <span class="tick light" data-did-init="setupPerPerson"><span data-repeat="true" aria-hidden="true"><span data-view="flip"></span></span></span> per person
-                or <span class="tick light" data-did-init="setupPerBusiness"><span data-repeat="true" aria-hidden="true"><span data-view="flip"></span></span></span> per
+                This is equivalent to <span class="tick light" data-did-init="setupPerPerson"><span data-repeat="true"
+                        aria-hidden="true"><span data-view="flip"></span></span></span> per person
+                or <span class="tick light" data-did-init="setupPerBusiness"><span data-repeat="true"
+                        aria-hidden="true"><span data-view="flip"></span></span></span> per
                 business.
             </h1>
         </div>
@@ -124,10 +127,26 @@
                 }
             }
 
+            function styleComma(root) {
+                const flippers = root.querySelectorAll(".tick-flip");
+
+                for (var flipper of flippers) {
+
+                    const text = flipper.querySelector(".tick-flip-panel-text-wrapper");
+
+                    console.log(text.textContent);
+
+                    flipper.style.minWidth = '0.4em';
+                }
+            }
+
             const tick = Tick.DOM.create(element, {
                 value: valueFromStat(stat),
+                didInit: () => {
+                    styleComma(element);
+                },
                 view: {
-                    children:[
+                    children: [
                         {
                             root: 'div',
                             layout: 'vertical',
@@ -154,12 +173,14 @@
 
             Tick.helper.interval(function () {
                 tick.value = valueFromStat(stat);
+                styleComma(element);
             }, updateInteval);
 
             return () => {
                 stats.push(stat);
                 stat = stats.shift();
                 tick.value = valueFromStat(stat);
+                styleComma(element);
             }
         }
 
