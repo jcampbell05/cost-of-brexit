@@ -1,5 +1,8 @@
 // Shared Stats between pages and scriptsw
 //
+const updateInteval = 25;
+const statShuffleInterval = 5000;
+
 const costPerYear = 100000000000;
 const costPerSecond = costPerYear / 31536000;
 const exitDate = new Date('2022-01-01');
@@ -88,8 +91,6 @@ var stats = [
         }
     }
 ]
-const updateInteval = 25;
-const statShuffleInterval = 5000;
 
 function setupFlip(tick) {
 
