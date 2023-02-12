@@ -212,3 +212,8 @@ setInterval(() => {
     selectedSlot();
 
 }, statShuffleInterval);
+
+$("#share").jsSocials({
+    shares: ["email", "twitter", "facebook", "linkedin", "telegram", "whatsapp"],
+    showCount: false
+});
