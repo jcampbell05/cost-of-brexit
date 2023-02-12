@@ -238,13 +238,13 @@ body {
 }
 
 .light .tick-flip {
-  letter-spacing: 0;
-  min-width: 0.8em;
+  letter-spacing: 0em;
+  text-indent:  0em;
+  min-width: 0.6em;
   margin-left: 0;
   margin-right: 0;
   padding-bottom: 0px;
 }
-
 
 .light .tick-flip-shadow {
   box-shadow: none;
