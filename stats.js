@@ -214,6 +214,8 @@ setInterval(() => {
 }, statShuffleInterval);
 
 $("#share").jsSocials({
+    url: 'https://costofbrexit.com',
+    text: 'What is the cost of brexit? And what could that money have been spent on',
     shares: ["email", "twitter", "facebook", "linkedin", "telegram", "whatsapp"],
     showCount: false
 });
