@@ -1,3 +1,3 @@
 # cost-of-brexit
 
-A cost of brexit counter
+A cost of Brexitcounter
