@@ -17,28 +17,10 @@
     <meta name="twitter:card" content="https://costofbrexit.com/preview.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
-
-    <style>
-        body {
-            font-family: "Oswald", sans-serif;
-        }
-
-        .bunting {
-            background: url('./bunting.png');
-            background-position: center;
-            background-repeat: repeat-x;
-            background-size: contain;
-            height: 100px;
-            width: 100%;
-        }
-
-        .tick-flip {
-            padding-bottom: 10px;
-        }
-    </style>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-34Y4RQC0JX"></script>
@@ -75,28 +57,22 @@
         <h1 class="text-3xl xl:text-5xl font-bold text-center mb-10">
             Instead we could have invested this on:
         </h1>
-        <div class="text-center text-1xl xl:text-3xl grid grid-cols-2 gap-8 xl:gap-16 place-items-center p-5">
-            <div>
-                <div class="tick light" data-did-init="setupPotholes"><span data-repeat="true" aria-hidden="true"><span data-view="flip"></span></span></div>
-                fixed potholes on the road
-            </div>
-            <div>Hosting <span class="tick light" data-did-init="setupOlympicGames"><span data-repeat="true" aria-hidden="true"><span data-view="flip"></span></span></span>
-                London
-                Olympic Games
-            </div>
-            <div>Hiring <span class="tick light" data-did-init="setupNurses"><span data-repeat="true" aria-hidden="true"><span data-view="flip"></span></span></span> nurses for the NHS
-            </div>
-            <div>For the next <span class="tick light" data-did-init="setupMeals"><span data-repeat="true" aria-hidden="true"><span data-view="flip"></span></span></span>
-                years, offering every school child free school meals</div>
+        <div class="text-1xl text-center xl:text-3xl grid grid-cols-2 gap-8 xl:gap-16 place-items-center p-5">
+            <div class="stat-slot light"></div>
+            <div class="stat-slot light"></div>
+            <div class="stat-slot light"></div>
+            <div class="stat-slot light"></div>
         </div>
         <div class="text-center">
             <h2 class="mt-10 text-3xl xl:text-5xl">Learn more at costofbrexit.com</h2>
         </div>
     </div>
+    <!-- TODO: Build rotation of stats, Add stats from https://costofbrexit.netlify.app/ and find way to show numbers at top -->
     <script src="./stats.js"></script>
     <script>
 
-        const updateInteval = 1;
+        const updateInteval = 25;
+        const statShuffleInterval = 5000;
 
         function setupFlip(tick) {
 
@@ -137,63 +113,67 @@
             }, updateInteval);
         }
 
-        function setupNurses(tick) {
+        function createStatSlot(element) {
 
-            const averageNurseWage = 33384
+            var stat = stats.shift();
 
-            Tick.helper.interval(function () {
+            function valueFromStat(stat) {
+                return {
+                    'caption': stat.caption,
+                    'value': stat.value()
+                }
+            }
 
-                const number = Math.floor(costOfBrexit() / averageNurseWage);
-                const formattedNumber = numberFormatter.format(number)
-
-                tick.value = formattedNumber;
-
-            }, updateInteval);
-        }
-
-        function setupPotholes(tick) {
-
-            const costToFixPothole = 63
-
-            Tick.helper.interval(function () {
-
-                const number = Math.floor(costOfBrexit() / costToFixPothole);
-                const formattedNumber = numberFormatter.format(number)
-
-                tick.value = formattedNumber;
-
-            }, updateInteval);
-        }
-
-        function setupOlympicGames(tick) {
-
-            const costOfOlympicGames = 8770000000
-
-            Tick.helper.interval(function () {
-
-                const number = Math.floor(costOfBrexit() / costOfOlympicGames);
-                const formattedNumber = numberFormatter.format(number)
-
-                tick.value = formattedNumber;
-
-            }, updateInteval);
-        }
-
-        function setupMeals(tick) {
-
-            const schoolkidsEachYear = 10000000
-            const costPerSchoolKid = 457.90
-            const costForAllKids = schoolkidsEachYear * costPerSchoolKid
+            const tick = Tick.DOM.create(element, {
+                value: valueFromStat(stat),
+                view: {
+                    children:[
+                        {
+                            root: 'div',
+                            layout: 'vertical',
+                            children: [
+                                {
+                                    layout: 'horizontal',
+                                    repeat: true,
+                                    key: 'value',
+                                    children: [
+                                        {
+                                            view: 'flip'
+                                        },
+                                    ]
+                                },
+                                {
+                                    view: 'flip',
+                                    key: 'caption'
+                                }
+                            ]
+                        }
+                    ]
+                }
+            });
 
             Tick.helper.interval(function () {
-
-                const number = Math.floor(costOfBrexit() / costForAllKids);
-                const formattedNumber = numberFormatter.format(number)
-
-                tick.value = formattedNumber;
-
+                tick.value = valueFromStat(stat);
             }, updateInteval);
+
+            return () => {
+                stats.push(stat);
+                stat = stats.shift();
+                tick.value = valueFromStat(stat);
+            }
         }
+
+        var statSlots = Array.from(document.querySelectorAll('.stat-slot'));
+        statSlots = statSlots.map(element => createStatSlot(element));
+
+
+        setInterval(() => {
+
+            const selectedSlotID = Math.floor(Math.random() * statSlots.length);
+            var selectedSlot = statSlots[selectedSlotID];
+            selectedSlot();
+
+        }, statShuffleInterval);
 
     </script>
 </body>
