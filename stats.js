@@ -204,11 +204,13 @@ stats = stats.sort((a, b) => 0.5 - Math.random());
 
 var statSlots = Array.from(document.querySelectorAll('.stat-slot'));
 statSlots = statSlots.map(element => createStatSlot(element));
+var nextStatsSlotIDToUpdate = 0;
 
 setInterval(() => {
 
-    const selectedSlotID = Math.floor(Math.random() * statSlots.length);
-    var selectedSlot = statSlots[selectedSlotID];
+    var selectedSlot = statSlots[nextStatsSlotIDToUpdate % statSlots.length];
     selectedSlot();
+
+    nextStatsSlotIDToUpdate ++;
 
 }, statShuffleInterval);
