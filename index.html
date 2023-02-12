@@ -57,21 +57,10 @@
             Instead we could have invested this on:
         </h1>
         <div class="text-1xl text-center xl:text-3xl grid grid-cols-2 gap-8 xl:gap-16 place-items-center p-5">
-            <div>
-                <div class="tick light" data-did-init="setupPotholes"><span data-repeat="true" aria-hidden="true"><span data-view="flip"></span></span></div>
-                fixed potholes on the road
-            </div>
-            <div>
-                <div class="tick light" data-did-init="setupOlympicGames"><span data-repeat="true" aria-hidden="true"><span data-view="flip"></span></span></div>
-                London Olympic Games
-            </div>
-            <div>
-                <div class="tick light" data-did-init="setupNurses"><span data-repeat="true" aria-hidden="true"><span data-view="flip"></span></span></div>
-                nurses for the NHS
-            </div>
-            <div>
-                <div class="tick light" data-did-init="setupMeals"><span data-repeat="true" aria-hidden="true"><span data-view="flip"></span></span></div>
-                years of free meals for every school child</div>
+            <div class="stat-slot light"></div>
+            <div class="stat-slot light"></div>
+            <div class="stat-slot light"></div>
+            <div class="stat-slot light"></div>
         </div>
         <div class="text-center">
             <h2 class="mt-10 text-lg xl:text-3xl"> <a href="stats.html" class="underline">See more stats</a> or learn what you can do <a class="underline" href="about.html">here</a></h2>
@@ -221,6 +210,7 @@
     <script>
 
         const updateInteval = 25;
+        const statShuffleInterval = 5000;
 
         function setupFlip(tick) {
 
@@ -261,63 +251,67 @@
             }, updateInteval);
         }
 
-        function setupNurses(tick) {
+        function createStatSlot(element) {
 
-            const averageNurseWage = 33384
+            var stat = stats.shift();
 
-            Tick.helper.interval(function () {
+            function valueFromStat(stat) {
+                return {
+                    'caption': stat.caption,
+                    'value': stat.value()
+                }
+            }
 
-                const number = Math.floor(costOfBrexit() / averageNurseWage);
-                const formattedNumber = numberFormatter.format(number)
-
-                tick.value = formattedNumber;
-
-            }, updateInteval);
-        }
-
-        function setupPotholes(tick) {
-
-            const costToFixPothole = 63
-
-            Tick.helper.interval(function () {
-
-                const number = Math.floor(costOfBrexit() / costToFixPothole);
-                const formattedNumber = numberFormatter.format(number)
-
-                tick.value = formattedNumber;
-
-            }, updateInteval);
-        }
-
-        function setupOlympicGames(tick) {
-
-            const costOfOlympicGames = 8770000000
-
-            Tick.helper.interval(function () {
-
-                const number = Math.floor(costOfBrexit() / costOfOlympicGames);
-                const formattedNumber = numberFormatter.format(number)
-
-                tick.value = formattedNumber;
-
-            }, updateInteval);
-        }
-
-        function setupMeals(tick) {
-
-            const schoolkidsEachYear = 10000000
-            const costPerSchoolKid = 457.90
-            const costForAllKids = schoolkidsEachYear * costPerSchoolKid
+            const tick = Tick.DOM.create(element, {
+                value: valueFromStat(stat),
+                view: {
+                    children:[
+                        {
+                            root: 'div',
+                            layout: 'vertical',
+                            children: [
+                                {
+                                    layout: 'horizontal',
+                                    repeat: true,
+                                    key: 'value',
+                                    children: [
+                                        {
+                                            view: 'flip'
+                                        },
+                                    ]
+                                },
+                                {
+                                    view: 'flip',
+                                    key: 'caption'
+                                }
+                            ]
+                        }
+                    ]
+                }
+            });
 
             Tick.helper.interval(function () {
-
-                const number = Math.floor(costOfBrexit() / costForAllKids);
-                const formattedNumber = numberFormatter.format(number)
-
-                tick.value = formattedNumber;
-
+                tick.value = valueFromStat(stat);
             }, updateInteval);
+
+            return () => {
+                stats.push(stat);
+                stat = stats.shift();
+                tick.value = valueFromStat(stat);
+            }
         }
+
+        var statSlots = Array.from(document.querySelectorAll('.stat-slot'));
+        statSlots = statSlots.map(element => createStatSlot(element));
+
+
+        setInterval(() => {
+
+            const selectedSlotID = Math.floor(Math.random() * statSlots.length);
+            var selectedSlot = statSlots[selectedSlotID];
+            selectedSlot();
+
+        }, statShuffleInterval);
 
     </script>
 </body>

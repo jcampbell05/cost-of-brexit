@@ -19,3 +19,76 @@ function title() {
     const formattedCost = currencyFormatter.format(costOfBrexit())
     return formattedCost + " is the total cost of Brexitsince Janurary 2022";
 }
+
+var stats = [
+    {
+        caption: 'fixed potholes on the road',
+        value: () => {
+            const costToFixPothole = 63
+            const number = Math.floor(costOfBrexit() / costToFixPothole);
+            const formattedNumber = numberFormatter.format(number)
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'London Olympic Games',
+        value: () => {
+            const costOfOlympicGames = 8770000000
+            const number = Math.floor(costOfBrexit() / costOfOlympicGames);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'nurses for the NHS',
+        value: () => {
+            const averageNurseWage = 33384;
+            const number = Math.floor(costOfBrexit() / averageNurseWage);
+            const formattedNumber = numberFormatter.format(number)
+
+            return formattedNumber;
+        }
+    }, {
+        caption: 'years of free meals for every school child',
+        value: () => {
+
+            const schoolkidsEachYear = 10000000
+            const costPerSchoolKid = 457.90
+            const costForAllKids = schoolkidsEachYear * costPerSchoolKid
+
+            const number = Math.floor(costOfBrexit() / costForAllKids);
+            const formattedNumber = numberFormatter.format(number)
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'stat 6',
+        value: () => {
+            return 9;
+        }
+    },
+    {
+        caption: 'stat 7',
+        value: () => {
+            return 94;
+        }
+    },
+    {
+        caption: 'stat 8',
+        value: () => {
+            return 00;
+        }
+    },
+    {
+        caption: 'stat 9',
+        value: () => {
+            return 23;
+        }
+    }
+]
+
+// Shuffle Stats
+//
+stats = stats.sort((a, b) => 0.5 - Math.random());
