@@ -67,7 +67,7 @@ var stats = [
         }
     },
     {
-        caption: 'installations of better insulations for a three-story house',
+        caption: 'installations of better insulation for a three-story house',
         value: () => {
             const cost = 10000
             const number = Math.floor(costOfBrexit() / cost);
