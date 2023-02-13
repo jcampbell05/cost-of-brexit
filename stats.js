@@ -336,11 +336,16 @@ var stats = [
         }
     },
     {
-        caption: 'new hospital day beds',
+        caption: 'new hospital day beds each day',
         value: () => {
 
-            const cost = 733 * 365;
-            const number = Math.floor(costOfBrexit() / cost);
+            const secondsSinceBrexit = (Date.now() - exitDate.getTime()) / 1000;
+            const secondsPerDay = 86400
+            const daysSinceBrexit = secondsSinceBrexit / secondsPerDay
+            const costPerDay = costOfBrexit() / daysSinceBrexit
+
+            const cost = 733;
+            const number = Math.floor(costPerDay/ cost);
             const formattedNumber = numberFormatter.format(number);
 
             return formattedNumber;
