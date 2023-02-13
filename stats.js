@@ -158,9 +158,9 @@ var stats = [
         }
     },
     {
-        caption: 'times over, removing dangerous cladding from all homes',
+        caption: 'times the amount needed to reduce the dumping of sewage in rivers',
         value: () => {
-            const cost = 50000000000
+            const cost = 18000000000
             const number = Math.floor(costOfBrexit() / cost);
             const formattedNumber = numberFormatter.format(number);
 
@@ -272,9 +272,9 @@ var stats = [
         }
     },
     {
-        caption: 'times over the UK\'s fishing fleet.',
+        caption: 'pounds of support to each fisherman',
         value: () => {
-            const cost = 626000000;
+            const cost = 11000;
             const number = Math.floor(costOfBrexit() / cost);
             const formattedNumber = numberFormatter.format(number);
 
@@ -329,6 +329,29 @@ var stats = [
         value: () => {
 
             const cost = 26990;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new hospital day beds',
+        value: () => {
+
+            const cost = 733;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+
+    {
+        caption: 'new psychologists',
+        value: () => {
+
+            const cost = 63380;
             const number = Math.floor(costOfBrexit() / cost);
             const formattedNumber = numberFormatter.format(number);
 
