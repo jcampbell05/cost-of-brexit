@@ -104,6 +104,16 @@ var stats = [
 
             return formattedNumber;
         }
+    },
+    {
+        caption: 'additional GP appointments',
+        value: () => {
+            const averageGPCost= 39.23
+            const number = Math.floor(costOfBrexit() / averageGPCost);
+            const formattedNumber = numberFormatter.format(number)
+
+            return formattedNumber;
+        }
     }
 ]
 
