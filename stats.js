@@ -29,7 +29,7 @@ var stats = [
         value: () => {
             const costToFixPothole = 63
             const number = Math.floor(costOfBrexit() / costToFixPothole);
-            const formattedNumber = numberFormatter.format(number)
+            const formattedNumber = numberFormatter.format(number);
 
             return formattedNumber;
         }
@@ -49,7 +49,7 @@ var stats = [
         value: () => {
             const averageNurseWage = 33384;
             const number = Math.floor(costOfBrexit() / averageNurseWage);
-            const formattedNumber = numberFormatter.format(number)
+            const formattedNumber = numberFormatter.format(number);
 
             return formattedNumber;
         }
@@ -62,32 +62,47 @@ var stats = [
             const costForAllKids = schoolkidsEachYear * costPerSchoolKid
 
             const number = Math.floor(costOfBrexit() / costForAllKids);
+            const formattedNumber = numberFormatter.format(number);
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new insulations for three-story houses',
+        value: () => {
+            const cost = 10000
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'children over-two with one year of free part-time childcare',
+        value: () => {
+            const costPerYear = 6952
+            const number = Math.floor(costOfBrexit() / costPerYear);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'days of court time',
+        value: () => {
+            const costPerDay = 1692
+            const number = Math.floor(costOfBrexit() / costPerDay);
             const formattedNumber = numberFormatter.format(number)
             return formattedNumber;
         }
     },
     {
-        caption: 'stat 6',
+        caption: 'goverment-backed start-up business loans',
         value: () => {
-            return 9;
-        }
-    },
-    {
-        caption: 'stat 7',
-        value: () => {
-            return 94;
-        }
-    },
-    {
-        caption: 'stat 8',
-        value: () => {
-            return 00;
-        }
-    },
-    {
-        caption: 'stat 9',
-        value: () => {
-            return 23;
+            const wage = 25000
+            const number = Math.floor(costOfBrexit() / wage);
+            const formattedNumber = numberFormatter.format(number)
+
+            return formattedNumber;
         }
     }
 ]
