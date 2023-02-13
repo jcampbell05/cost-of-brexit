@@ -67,11 +67,22 @@ var stats = [
         }
     },
     {
-        caption: 'installations of better insulation for a three-story house',
+        caption: 'new F35-B fighter jets',
         value: () => {
-            const cost = 10000
+            const cost = 88800000
+
             const number = Math.floor(costOfBrexit() / cost);
-            const formattedNumber = numberFormatter.format(number);
+            const formattedNumber = numberFormatter.format(number)
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'police officers',
+        value: () => {
+            const wage = 29100
+            const number = Math.floor(costOfBrexit() / wage);
+            const formattedNumber = numberFormatter.format(number)
 
             return formattedNumber;
         }
