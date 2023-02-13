@@ -339,7 +339,7 @@ var stats = [
         caption: 'new hospital day beds',
         value: () => {
 
-            const cost = 733;
+            const cost = 733 * 365;
             const number = Math.floor(costOfBrexit() / cost);
             const formattedNumber = numberFormatter.format(number);
 
