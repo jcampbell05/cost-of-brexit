@@ -1,7 +1,7 @@
 // Shared Stats between pages and scriptsw
 //
 const updateInteval = 25;
-const statShuffleInterval = 5000;
+const statShuffleInterval = 3000;
 
 const costPerYear = 100000000000;
 const costPerSecond = costPerYear / 31536000;
@@ -252,9 +252,7 @@ setInterval(() => {
 }, statShuffleInterval);
 
 // TODO: 
-// - Swap insulation for wind farm
 // - Add border force stat
-// - Add Police Stat
 // - Go through each stat and figure out what is needed
 // - Figure out Aprneticeship wages
 // - Update our sources to just what is needed
