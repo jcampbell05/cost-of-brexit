@@ -252,66 +252,6 @@ var stats = [
         }
     },
     {
-        caption: 'new desalination plants',
-        value: () => {
-            const cost = 250000000;
-            const number = Math.floor(costOfBrexit() / cost);
-            const formattedNumber = numberFormatter.format(number);
-
-            return formattedNumber;
-        }
-    },
-    {
-        caption: 'new desalination plants',
-        value: () => {
-            const cost = 250000000;
-            const number = Math.floor(costOfBrexit() / cost);
-            const formattedNumber = numberFormatter.format(number);
-
-            return formattedNumber;
-        }
-    },
-    {
-        caption: 'new desalination plants',
-        value: () => {
-            const cost = 250000000;
-            const number = Math.floor(costOfBrexit() / cost);
-            const formattedNumber = numberFormatter.format(number);
-
-            return formattedNumber;
-        }
-    },
-    {
-        caption: 'new desalination plants',
-        value: () => {
-            const cost = 250000000;
-            const number = Math.floor(costOfBrexit() / cost);
-            const formattedNumber = numberFormatter.format(number);
-
-            return formattedNumber;
-        }
-    },
-    {
-        caption: 'new desalination plants',
-        value: () => {
-            const cost = 250000000;
-            const number = Math.floor(costOfBrexit() / cost);
-            const formattedNumber = numberFormatter.format(number);
-
-            return formattedNumber;
-        }
-    },
-    {
-        caption: 'new desalination plants',
-        value: () => {
-            const cost = 250000000;
-            const number = Math.floor(costOfBrexit() / cost);
-            const formattedNumber = numberFormatter.format(number);
-
-            return formattedNumber;
-        }
-    },
-    {
         caption: 'additional vaccines invested',
         value: () => {
             const cost = 88000000;
