@@ -239,3 +239,11 @@ setInterval(() => {
     nextStatsSlotIDToUpdate ++;
 
 }, statShuffleInterval);
+
+// TODO: 
+// - Swap insulation for wind farm
+// - Add border force stat
+// - Add Police Stat
+// - Go through each stat and figure out what is needed
+// - Figure out Aprneticeship wages
+// - Update our sources to just what is needed
