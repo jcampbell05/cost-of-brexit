@@ -125,6 +125,201 @@ var stats = [
 
             return formattedNumber;
         }
+    },
+    {
+        caption: 'artists supported',
+        value: () => {
+            const size = 37500
+            const number = Math.floor(costOfBrexit() / size);
+            const formattedNumber = numberFormatter.format(number)
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'feature films',
+        value: () => {
+            const budget = 6200000
+
+            const number = Math.floor(costOfBrexit() / budget);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'music lessons for children',
+        value: () => {
+            const cost = 36
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'times over, removing dangerous cladding from all homes',
+        value: () => {
+            const cost = 50000000000
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'additional two-bedroom homes',
+        value: () => {
+            const cost = 281437
+            const number = Math.floor(costOfBrexit() / cost);
+             const formattedNumber = numberFormatter.format(number)
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'times the budget of NASA towards our own space agency',
+        value: () => {
+            const budget = 25400000000
+            const number = Math.floor(costOfBrexit() / budget);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'imported barrels of oil',
+        value: () => {
+            const cost = 73
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'years of state pension',
+        value: () => {
+            const statePensionPerWeek = 185.15
+            const statePensionPerYear = statePensionPerWeek * 52
+            const retiredPopulation = 11000000
+            const pensionCostPerYear = retiredPopulation *statePensionPerYear
+
+            const number = Math.floor(costOfBrexit() / pensionCostPerYear);
+            const formattedNumber = numberFormatter.format(number)
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new wind turbines',
+        value: () => {
+            const cost = 7000
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new hospitals',
+        value: () => {
+            const averageHospitalCost = 178000000;
+            const number = Math.floor(costOfBrexit() / averageHospitalCost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'newly planted tress',
+        value: () => {
+            const cost = 55;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new desalination plants',
+        value: () => {
+            const cost = 250000000;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new desalination plants',
+        value: () => {
+            const cost = 250000000;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new desalination plants',
+        value: () => {
+            const cost = 250000000;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new desalination plants',
+        value: () => {
+            const cost = 250000000;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new desalination plants',
+        value: () => {
+            const cost = 250000000;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new desalination plants',
+        value: () => {
+            const cost = 250000000;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new desalination plants',
+        value: () => {
+            const cost = 250000000;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'investments towards a new vaccine',
+        value: () => {
+            const cost = 250000000;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
     }
 ]
 
@@ -253,6 +448,4 @@ setInterval(() => {
 
 // TODO: 
 // - Add border force stat
-// - Go through each stat and figure out what is needed
 // - Figure out Aprneticeship wages
-// - Update our sources to just what is needed
