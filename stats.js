@@ -96,7 +96,7 @@ var stats = [
         }
     },
     {
-        caption: 'goverment-backed start-up business loans',
+        caption: 'government-backed start-up business loans',
         value: () => {
             const wage = 25000
             const number = Math.floor(costOfBrexit() / wage);
