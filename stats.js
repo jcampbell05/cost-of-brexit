@@ -312,15 +312,89 @@ var stats = [
         }
     },
     {
-        caption: 'investments towards a new vaccine',
+        caption: 'additional vaccines invested',
         value: () => {
-            const cost = 250000000;
+            const cost = 88000000;
             const number = Math.floor(costOfBrexit() / cost);
             const formattedNumber = numberFormatter.format(number);
 
             return formattedNumber;
         }
-    }
+    },
+    {
+        caption: 'additional teachers',
+        value: () => {
+            const cost = 28000;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'times over the UK\'s fishing fleet.',
+        value: () => {
+            const cost = 626000000;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'additional signallers to maintain our railway\'s signals',
+        value: () => {
+
+            const wagesPerYear = 100000000 / 3000;
+            const number = Math.floor(costOfBrexit() / wagesPerYear);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'pounds of support to our farmers',
+        value: () => {
+            const farmers = 92100
+            const number = Math.floor(costOfBrexit() / farmers);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'new hybrid diesel-electric double-deck buses for our public transport',
+        value: () => {
+
+            const cost = 300000;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'additional Border Force officials',
+        value: () => {
+
+            const cost = 34163;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
+    {
+        caption: 'additional apprentices',
+        value: () => {
+
+            const cost = 26990;
+            const number = Math.floor(costOfBrexit() / cost);
+            const formattedNumber = numberFormatter.format(number);
+
+            return formattedNumber;
+        }
+    },
 ]
 
 function setupFlip(tick) {
