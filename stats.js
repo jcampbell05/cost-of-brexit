@@ -293,7 +293,7 @@ var stats = [
         }
     },
     {
-        caption: 'pounds of support to our farmers',
+        caption: 'pounds of support to each farmer',
         value: () => {
             const farmers = 92100
             const number = Math.floor(costOfBrexit() / farmers);
