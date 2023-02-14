@@ -20,7 +20,7 @@ function costOfBrexit() {
 
 function title() {
     const formattedCost = currencyFormatter.format(costOfBrexit())
-    return formattedCost + " is the total cost of Brexitsince Janurary 2022";
+    return formattedCost + " is the total cost of Brexit since Janurary 2022";
 }
 
 var stats = [
