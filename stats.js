@@ -232,7 +232,7 @@ var stats = [
         }
     },
     {
-        caption: 'newly planted tress',
+        caption: 'newly planted trees',
         value: () => {
             const cost = 55;
             const number = Math.floor(costOfBrexit() / cost);
